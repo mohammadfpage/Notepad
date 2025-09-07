@@ -28,41 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            saveToolStripMenuItem = new ToolStripMenuItem();
+            richTextBox1 = new RichTextBox();
             exitToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
-            richTextBox1 = new RichTextBox();
+            exitFileToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1 = new MenuStrip();
+            openFilesToolStripMenuItem = new ToolStripMenuItem();
+            saveFileToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { saveToolStripMenuItem, exitToolStripMenuItem, aboutToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1189, 28);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // saveToolStripMenuItem
-            // 
-            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(54, 24);
-            saveToolStripMenuItem.Text = "Save";
-            // 
-            // exitToolStripMenuItem
-            // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(47, 24);
-            exitToolStripMenuItem.Text = "Exit";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(64, 24);
-            aboutToolStripMenuItem.Text = "About";
             // 
             // richTextBox1
             // 
@@ -71,7 +45,50 @@
             richTextBox1.Size = new Size(1189, 610);
             richTextBox1.TabIndex = 1;
             richTextBox1.Text = "";
-            richTextBox1.Visible = false;
+            richTextBox1.TextChanged += richTextBox1_TextChanged;
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(47, 24);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(64, 24);
+            aboutToolStripMenuItem.Text = "About";
+            // 
+            // exitFileToolStripMenuItem
+            // 
+            exitFileToolStripMenuItem.Name = "exitFileToolStripMenuItem";
+            exitFileToolStripMenuItem.Size = new Size(120, 24);
+            exitFileToolStripMenuItem.Text = "Clear Notepad";
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { saveFileToolStripMenuItem, openFilesToolStripMenuItem, exitToolStripMenuItem, aboutToolStripMenuItem, exitFileToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1189, 28);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // openFilesToolStripMenuItem
+            // 
+            openFilesToolStripMenuItem.Name = "openFilesToolStripMenuItem";
+            openFilesToolStripMenuItem.Size = new Size(92, 24);
+            openFilesToolStripMenuItem.Text = "Open Files";
+            openFilesToolStripMenuItem.Click += openFilesToolStripMenuItem_Click;
+            // 
+            // saveFileToolStripMenuItem
+            // 
+            saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
+            saveFileToolStripMenuItem.Size = new Size(81, 24);
+            saveFileToolStripMenuItem.Text = "Save File";
+            saveFileToolStripMenuItem.Click += saveFileToolStripMenuItem_Click;
             // 
             // frmMain
             // 
@@ -92,11 +109,12 @@
         }
 
         #endregion
-
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem saveToolStripMenuItem;
+        private RichTextBox richTextBox1;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
-        private RichTextBox richTextBox1;
+        private ToolStripMenuItem exitFileToolStripMenuItem;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem openFilesToolStripMenuItem;
+        private ToolStripMenuItem saveFileToolStripMenuItem;
     }
 }

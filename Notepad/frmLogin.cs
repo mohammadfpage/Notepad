@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace Notepad
@@ -15,9 +16,11 @@ namespace Notepad
             string username = textBox1.Text.Trim();
             string password = textBox2.Text.Trim();
 
-            string connectionString = "Data Source=.\\SQL2022;Initial Catalog=Notepad;Integrated Security=True;TrustServerCertificate=True";
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            string connectionString2 = "Data Source=.\\SQL2022;Initial Catalog=Notepad;User ID=sa;Password=MDev2025!!;TrustServerCertificate=True";
+
+
+            using (SqlConnection con = new SqlConnection(connectionString2))
             {
                 try
                 {
